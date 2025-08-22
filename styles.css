@@ -1,0 +1,90 @@
+:root{
+    --bg:#0b0c10;
+    --bg-soft:#111217;
+    --muted:#9aa0a6;
+    --text:#e6e9ee;
+    --card:#12141b;
+    --border:#20232d;
+    --accent:#ff8c00;
+    --accent-ink:#1c1206;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0 8px;padding:0}
+body{
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    color:var(--text);
+    background:linear-gradient(180deg,var(--bg) 0%,#0e1015 100%);
+}
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+.row{display:flex}.col{display:flex;flex-direction:column}
+.center{align-items:center}.between{justify-content:space-between}.wrap{flex-wrap:wrap}
+.gap-8{gap:8px}.gap-12{gap:12px}.gap-16{gap:16px}.gap-24{gap:24px}
+.mb-8{margin-bottom:8px}.mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}
+.mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}
+.maxw-2{max-width:720px}.text-sm{font-size:.9rem}.muted{color:var(--muted)}
+.h1{font-size:clamp(2rem,3vw,2.5rem);line-height:1.15;font-weight:800}
+.h2{font-size:1.5rem;font-weight:700;margin:0}
+.h3{font-size:1.05rem;font-weight:700;margin:0}
+
+.site-header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+    background:color-mix(in oklab,var(--bg) 80%,transparent);
+    padding:10px 0;
+}
+.brand-logo{height:28px;display:block}
+
+.icon{width:20px;height:20px;display:inline-block}
+.icon-pill{background:#1b1e27;padding:10px;border-radius:14px;border:1px solid #252a36}
+
+.btn,.btn-outline,.btn-lg,.btn-sm{
+    display:inline-flex;align-items:center;gap:8px;
+    border-radius:12px;padding:10px 14px;border:1px solid transparent;
+    text-decoration:none;color:var(--text);cursor:pointer;background:#1a1f28;
+    transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.btn-outline{background:transparent;border-color:var(--border)}
+.btn-lg{padding:12px 16px;font-weight:600}
+.btn-sm{padding:8px 10px;font-size:.85rem}
+.btn,.chip,.badge-accent{border-color:transparent}
+.btn,.chip{outline-color:var(--accent)}
+.btn:focus-visible,.btn-outline:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.badge,.badge-outline,.badge-accent{
+    display:inline-block;padding:6px 10px;border-radius:999px;font-size:.8rem;
+    border:1px solid transparent;background:#1a1f28;
+}
+.badge-outline{background:transparent;border-color:var(--border)}
+.badge-accent{background:var(--accent);color:var(--accent-ink);font-weight:600}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.85rem;padding:6px 10px;border-radius:999px;background:#171b23;color:var(--text);border:1px solid #222737}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:25px}
+.card-content{padding:20px}
+
+.grid.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;padding:24px 0 8px}
+.meta-card{display:flex;align-items:stretch}
+.grid.skills{display:grid;grid-template-columns:1fr 3fr;gap:16px;padding:0 0 8px}
+.grid.about{display:grid;grid-template-columns:2fr 1fr;gap:16px;padding:8px 0}
+.grid.contact{display:grid;grid-template-columns:1fr 2fr;gap:16px;padding:16px 0 24px}
+
+.cards-grid{margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+
+.list{margin:0;padding-left:20px}.list li{margin:8px 0}
+
+.site-footer{border-top:1px solid var(--border);padding:20px 0;background:color-mix(in oklab,var(--bg) 85%,transparent)}
+.link{color:var(--text);text-decoration:none}.link:hover{text-decoration:underline}
+
+.btn,.link:hover,.icon-pill{border-color:color-mix(in oklab,var(--accent) 35%, transparent)}
+.btn{background:linear-gradient(180deg,#1a1f28 0%,#181d25 100%)}
+.btn-outline:hover{border-color:var(--accent);color:var(--text)}
+
+@media (max-width:980px){
+    .grid.hero,.grid.skills,.grid.about,.grid.contact{grid-template-columns:1fr}
+    .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){.cards-grid{grid-template-columns:1fr}}
